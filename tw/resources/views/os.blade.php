@@ -20,5 +20,5 @@
                 <a href="http://127.0.0.1:8000/os">OS</a>
             </div>
         </nav>
-        <p>hello</p>
+        
     </header>
