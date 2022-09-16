@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -24,19 +23,9 @@
                 <a href="/comissoes">COMISSÕES</a>
                 <a href="/user">LOGIN</a>
             </div>
-            <div class="bg-white rounded-md shadow-inner w-64 h-36 mt-4 ml-8 p-2">
-                <h1 class="text-center font-bold">CADASTRAR</h1>
-                <form action="{{ route('cadastrar_material')}}" method="POST">
-                    @csrf
-                    <label for="">DESCRIÇÃO</label><br />
-                    <input type="text" name="descrição"><br />
-                    <label for="">PREÇO</label><br />
-                    <input type="text" name="preço"><br />
-                    <label for="">QUANTIDADE</label><br />
-                    <input type="text" name="quantidade"><br />
-                    <button class="self-center bg-blue-600 text-white font-bold">SALVAR</button>
-
-
-                </form>
-            </div>
         </nav>
+    </header>
+    
+   
+</body>
+</html>

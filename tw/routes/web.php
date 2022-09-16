@@ -20,9 +20,18 @@ Route::get('/', function () {
 Route::get('/os', function () {
     return view('os');
 });
-Route::get('/materiais', function () {
+Route::get('/materiais',function () {
     return view('materiais');
 });
+Route::get('/materiais', 'ProdutosController@create', function() {
+    return view('materiais');
+});
+    
+Route::post('/materiais', 'ProdutosController@store')->name('cadastrar_material'); 
+
+
+
+
 Route::get('/apontamentos', function () {
     return view('apontamentos');
 });
@@ -30,5 +39,5 @@ Route::get('/comissoes', function () {
     return view('comissoes');
 });
 Route::get('/user', function () {
-    return view('user');
+    return view('login');
 });
