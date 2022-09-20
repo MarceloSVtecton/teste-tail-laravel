@@ -28,6 +28,12 @@ Route::get('/materiais', 'ProdutosController@create', function() {
 });
     
 Route::post('/materiais', 'ProdutosController@store')->name('cadastrar_material'); 
+Route::get('produtivos','ProdutivosController@index');
+Route::post('produtivos', 'ProdutivosController@store');
+Route::get('produtivos/{produtivo}', 'ProdutivosController@show');
+Route::get('produtivos/{produtivo}/edit', 'ProdutivosController@edit');
+Route::patch('produtivos/{produtivo}', 'ProdutivosController@update');
+Route::delete('produtivos/{produtivo}', 'ProdutivosController@destroy');
 
 
 

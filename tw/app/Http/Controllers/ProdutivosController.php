@@ -7,11 +7,12 @@ use Illuminate\Http\Request;
 class ProdutivosController extends Controller
 {
     public function index(){
-    return view(‘resultado’);
+        $produtivos=Produtivo::all();
+    return view('produtivos', compact('produtivos'));
     }
     
-    public function show(Product $product){
-    return view(‘resultado’);
+    public function show(Produtivo $produtivo){
+    return view('produtivo', compacta('produtivo'));
     }
     
     public function store(){
@@ -19,7 +20,8 @@ class ProdutivosController extends Controller
     }
     
     public function edit(Produtivo $produtivo){
-    return view(‘produtivo_edit’);
+        produtivo=Produtivo::all();
+    return view('produtivo_edit', compacta('produtivo'));
     }
     
     public function update(Produtivo $produtivo, Request $request){
