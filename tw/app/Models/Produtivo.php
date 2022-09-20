@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Produtivos extends Model
 {
+    protected $fillable = [
+        'nome',
+        'opção',
+    ];
     use HasFactory;
 }

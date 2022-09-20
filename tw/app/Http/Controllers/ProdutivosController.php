@@ -20,7 +20,7 @@ class ProdutivosController extends Controller
     }
     
     public function edit(Produtivo $produtivo){
-        produtivo=Produtivo::all();
+        $produtivos=Produtivo::all();
     return view('produtivo_edit', compacta('produtivo'));
     }
     
