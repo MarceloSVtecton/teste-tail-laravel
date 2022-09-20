@@ -16,7 +16,15 @@ class ProdutivosController extends Controller
     }
     
     public function store(){
-    //
+        $data=[
+            'produtivo_id'=>request('produtivo_id'),
+            'nome'=>request('nome'),
+            'opção'=>request('opção'),
+        ];
+        Produtivo::create($data);
+        return redirect('produtivo');
+
+    //inserindo produtivo e opção.
     }
     
     public function edit(Produtivo $produtivo){
