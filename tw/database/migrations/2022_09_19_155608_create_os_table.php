@@ -14,7 +14,6 @@ class CreateOsTable extends Migration
     public function up()
     {
         Schema::create('os', function (Blueprint $table) {
-            $table->id();
             $table->integer('Nº');
             $table->decimal('valor', 19, 2);
             $table->integer('quantidade peças');
@@ -23,6 +22,7 @@ class CreateOsTable extends Migration
             $table->string('pintura');
             $table->string('montagem');
             $table->string('polimento');
+            $table->decimal('gastos', 19, 2);
             $table->timestamps();
         });
     }
