@@ -17,26 +17,52 @@
             <h1 class="text-center text-5xl font-bold">Gerador de Comissões</h1>
         </div>
         <nav>
-            <div class="text-center text-2xl text-white font-bold space-x-48 ">
-                <a href="/os">OS</a>
+        <div class="text-center text-l text-white font-bold space-x-48 ">
+                <a href="/ordem_serviço">OS</a>
+                <a href="/colaboradores">PRODUTIVOS</a>
                 <a href="/materiais">MATERIAIS</a>
                 <a href="/apontamentos">APONTAMENTOS</a>
                 <a href="/comissoes">COMISSÕES</a>
                 <a href="/user">LOGIN</a>
             </div>
-            <div class="bg-white rounded-md shadow-inner w-64 h-36 mt-4 ml-8 p-2">
-                <h1 class="text-center font-bold">CADASTRAR</h1>
-                <form action="{{ route('cadastrar_material')}}" method="POST">
-                    @csrf
-                    <label for="">DESCRIÇÃO</label><br />
-                    <input type="text" name="descrição"><br />
-                    <label for="">PREÇO</label><br />
-                    <input type="text" name="preço"><br />
-                    <label for="">QUANTIDADE</label><br />
-                    <input type="text" name="quantidade"><br />
-                    <button class="self-center bg-blue-600 text-white font-bold">SALVAR</button>
-
-
-                </form>
-            </div>
+       
         </nav>
+        <section class="text-white body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-wrap -mx-4 -mb-10 text-center">
+      <div class="sm:w-1/2 mb-10 px-4">
+        <div class="rounded-lg h-64 overflow-hidden">
+            <h1 class= "mb-10 font-bold text-2xl">Cadastrar Material</h1>
+    <form action="">
+              <label for="">descrição</label> <br />
+              <input type="text" autocomplete="of" name="descrição" class="text-black"> <br />
+              <label for="">preço</label> <br /> 
+              <input type="text" autocomplete="of" name="preço" class="text-black"> <br />
+              <label for="">quantidade<label> <br />
+              <input type="text" autocomplete="of" name="quantidade" class="text-black"> 
+        
+        </div>
+       
+        <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">ENVIAR</button>
+      </div>
+    </form>
+      <div class="sm:w-1/2 mb-10 px-4">
+        <div class="rounded-lg h-64 overflow-hidden">
+        <h1 class= "mb-10 font-bold text-2xl">Registrar Gastos</h1>
+        <form action="">
+              <label for="">os</label> <br />
+              <input type="text" autocomplete="of" name="descrição" class="text-black"> <br />
+              <label for="">material</label> <br /> 
+              <select name="produto" id="produto"  class="text-black w-40"></select> <br />
+              <label for="">quantidade<label> <br />
+              <input type="text" autocomplete="of" name="quantidade" class="text-black"> 
+        
+          
+        </div>
+       
+        <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">ENVIAR</button>
+      </div>
+      </form>
+    </div>
+  </div>
+            

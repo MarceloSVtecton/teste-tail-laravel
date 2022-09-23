@@ -3,16 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use o;
 
 class osController extends Controller
 {
     public function index(){
-        $produtivos=o::all();
-    return view('apontamentos', compact('os'));
+        $os=o::all();
+    return view('ordem_serviço', compact('os'));
     }
     
     public function show(o $o){
-    return view('apontamentos', compacta('o'));
+    return view('o', compacta('o'));
     }
     
     public function store(){

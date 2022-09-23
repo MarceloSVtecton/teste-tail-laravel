@@ -16,9 +16,17 @@
             <h1 class="text-center text-5xl font-bold">Gerador de Comissões</h1>
         </div>
         <nav>
-            <div>
-                <a href="http://127.0.0.1:8000/os">OS</a>
+            <div class="text-center text-2xl text-white font-bold space-x-48 ">
+                <a href="/ordem_serviço">OS</a>
+                <a href="/colaboradores">PRODUTIVOS</a>
+                <a href="/materiais">MATERIAIS</a>
+                <a href="/apontamentos">APONTAMENTOS</a>
+                <a href="/comissoes">COMISSÕES</a>
+                <a href="/user">LOGIN</a>
             </div>
         </nav>
-        
     </header>
+    
+   
+</body>
+</html>

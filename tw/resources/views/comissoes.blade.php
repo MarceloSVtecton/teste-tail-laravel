@@ -18,7 +18,8 @@
         </div>
         <nav>
             <div class="text-center text-2xl text-white font-bold space-x-48 ">
-                <a href="/os">OS</a>
+                <a href="/ordem_serviço">OS</a>
+                <a href="/colaboradores">PRODUTIVOS</a>
                 <a href="/materiais">MATERIAIS</a>
                 <a href="/apontamentos">APONTAMENTOS</a>
                 <a href="/comissoes">COMISSÕES</a>

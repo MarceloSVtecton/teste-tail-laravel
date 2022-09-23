@@ -17,9 +17,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
-Route::get('/os', function () {
-    return view('os');
+
+
+Route::get('/ordem_serviço', function () {
+    return view('ordem_serviço');
 });
+Route::get('/colaboradores', function () {
+    return view('colaboradores');
+});
+
 Route::get('/materiais',function () {
     return view('materiais');
 });
@@ -40,6 +46,9 @@ Route::delete('produtivos/{produtivo}', 'ProdutivosController@destroy');
 Route::get('/apontamentos', function () {
     return view('apontamentos');
 });
+
+
+
 Route::get('os','osController@index');
 Route::post('os', 'osController@store');
 Route::get('os/{o}', 'osController@show');

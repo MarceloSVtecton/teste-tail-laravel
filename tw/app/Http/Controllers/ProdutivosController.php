@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use produtivo;
 
 class ProdutivosController extends Controller
 {
