@@ -21,7 +21,7 @@ class osController extends Controller
             'o_id'=>request('o_id'),
             'Nº'=>request('Nº'),
             'valor'=>request('valor'),
-            'quantidade peças'=>request('quantidade peças'),
+            'quantidade_peças'=>request('quantidade_peças'),
             'funilaria'=>requeste('funilaria'),
             'preparação'=>request('preparação'),
             'pintura'=>request('pintura'),

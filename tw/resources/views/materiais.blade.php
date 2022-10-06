@@ -11,13 +11,13 @@
         <title>Document</title>
     </head>
 
-<body class="bg-blue-500">
+<body class="bg-blue-300">
     <header>
         <div class=" bg-blue-100 w-96 h-32">
             <h1 class="text-center text-5xl font-bold">Gerador de Comissões</h1>
         </div>
         <nav>
-        <div class="text-center text-l text-white font-bold space-x-48 ">
+        <div class="text-center text-l text-black font-bold space-x-48 ">
                 <a href="/ordem_serviço">OS</a>
                 <a href="/colaboradores">PRODUTIVOS</a>
                 <a href="/materiais">MATERIAIS</a>
@@ -27,42 +27,90 @@
             </div>
        
         </nav>
-        <section class="text-white body-font">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="flex flex-wrap -mx-4 -mb-10 text-center">
-      <div class="sm:w-1/2 mb-10 px-4">
-        <div class="rounded-lg h-64 overflow-hidden">
-            <h1 class= "mb-10 font-bold text-2xl">Cadastrar Material</h1>
-    <form action="">
-              <label for="">descrição</label> <br />
-              <input type="text" autocomplete="of" name="descrição" class="text-black"> <br />
-              <label for="">preço</label> <br /> 
-              <input type="text" autocomplete="of" name="preço" class="text-black"> <br />
-              <label for="">quantidade<label> <br />
-              <input type="text" autocomplete="of" name="quantidade" class="text-black"> 
-        
+
+        <section class="text-gray-600">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="lg:w-2/3 w-full mx-auto overflow-auto">
+            <div class="flex items-center justify-between mb-2">
+                <h1 class="text-2xl font-medium title-font mb-2 text-gray-900">Produtos</h1>
+                <a class="flex ml-auto text-white bg-indigo-500 border-0 py-1.5 px-3 text-sm focus:outline-none hover:bg-indigo-600 rounded">Adicionar</a>
+            </div>
+            <table class="table-auto w-full text-left whitespace-no-wrap">
+                <thead>
+                <tr >
+                    <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">#</th>
+                    <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Nome</th>
+                    <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Valor</th>
+                    <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Estoque</th>
+                    <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 text-right">Ações</th>
+                </tr>
+                </thead>
+                <tbody class="divide-y">
+                @foreach($produtos as $produto)
+                <tr @if($loop->even)class="bg-gray-100"@endif>
+                    <td class="px-4 py-3">{{ $produto->id }}</td>
+                   
+                    <td class="px-4 py-3">{{ $produto->descrição }}</td>
+                    <td class="px-4 py-3">{{ $produto->preço }}</td>
+                    <td class="px-4 py-3">{{ $produto->quantidade }}</td>
+                    <td class="px-4 py-3 text-sm text-right space-x-3 text-gray-900">
+                        <a class="mt-3 text-indigo-500 inline-flex items-center">Editar</a>
+                        <a class="mt-3 text-indigo-500 inline-flex items-center">Deletar</a>
+                    </td>
+               
+                </tr>
+                @endforeach
+                </tbody>
+            </table>
         </div>
-       
-        <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">ENVIAR</button>
-      </div>
-    </form>
-      <div class="sm:w-1/2 mb-10 px-4">
-        <div class="rounded-lg h-64 overflow-hidden">
-        <h1 class= "mb-10 font-bold text-2xl">Registrar Gastos</h1>
-        <form action="">
-              <label for="">os</label> <br />
-              <input type="text" autocomplete="of" name="descrição" class="text-black"> <br />
-              <label for="">material</label> <br /> 
-              <select name="produto" id="produto"  class="text-black w-40"></select> <br />
-              <label for="">quantidade<label> <br />
-              <input type="text" autocomplete="of" name="quantidade" class="text-black"> 
-        
-          
-        </div>
-       
-        <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">ENVIAR</button>
-      </div>
-      </form>
     </div>
-  </div>
-            
+</section>
+
+<footer class="text-gray-600">
+    <div class="border-t border-gray-200">
+        <div class="container px-5 py-8 flex flex-wrap mx-auto items-center">
+            <div class="flex md:flex-nowrap flex-wrap justify-center items-end md:justify-start">
+                <div class="relative sm:w-64 w-40 sm:mr-4 mr-2">
+                    <label for="footer-field" class="leading-7 text-sm text-gray-600">Placeholder</label>
+                    <input type="text" id="footer-field" name="footer-field" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:ring-2 focus:bg-transparent focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                </div>
+                <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Button</button>
+                <p class="text-gray-500 text-sm md:ml-6 md:mt-0 mt-2 sm:text-left text-center">Bitters chicharrones fanny pack
+                    <br class="lg:block hidden">waistcoat green juice
+                </p>
+            </div>
+            <span class="inline-flex lg:ml-auto lg:mt-0 mt-6 w-full justify-center md:justify-start md:w-auto">
+        <a class="text-gray-500">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+            <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+          </svg>
+        </a>
+      </span>
+        </div>
+    </div>
+    <div class="bg-gray-100">
+        <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+            <p class="text-gray-500 text-sm text-center sm:text-left">© 2020 Tailblocks —
+                <a href="https://twitter.com/knyttneve" class="text-gray-600 ml-1" target="_blank" rel="noopener noreferrer">@knyttneve</a>
+            </p>
+            <span class="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-gray-500 text-sm">Enamel pin tousled raclette tacos irony</span>
+        </div>
+    </div>
+</footer>

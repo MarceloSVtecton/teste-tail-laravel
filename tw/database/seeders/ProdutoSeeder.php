@@ -2,14 +2,12 @@
 
 namespace Database\Seeders;
 
+use App\Models\Produto;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Database\Eloquent\Model;
-use Database\Seeders\ProdutoSeeder;
+use Database\Seeders\DatabaseSeeder;
 use Database\Factories\ProdutoFactory;
 
-
-class DatabaseSeeder extends Seeder
+class ProdutoSeeder extends Seeder
 {
     /**
      * Run the database seeders.
@@ -17,10 +15,14 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
-    { 
+    {
+    
+    {
+       Produto::factory(10)->create();
         
-        $this->call(ProdutoSeeder::class);
+        
        
-        //
+
+    }
     }
 }

@@ -10,7 +10,7 @@ class o extends Model
     protected $fillable = [
         'Nº',
         'valor',
-        'quantidade peças',
+        'quantidade_peças',
         'funilaria',
         'preparação',
         'pintura',
