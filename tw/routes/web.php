@@ -1,18 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
+use App\Http\Controllers\MateriaisController;
+use App\Http\Controllers\ProdutosController;
+use App\Models\Produto;
 
 Route::get('/', function () {
     return view('home');
@@ -22,12 +13,30 @@ Route::get('/materiais', function() {
     return view('materiais');
 });
 
-use App\Http\Controllers\MateriaisController;
- 
-Route::get('materiais', [MateriaisController::class, 'index']);
+Route::get('/materialincluir', function(){
+    return view('materialincluir');
+});
 
-use App\Http\Controllers\ProdutosController;
- 
-Route::get('materiais', [ProdutosController::class, 'index']);
 
-Route::get('/produtos/search', 'ProdutosController@search');
+
+Route::get('/materialeditar', function () {
+    return view('materialeditar');
+});
+
+ 
+Route::get('/materiais', [ProdutosController::class, 'index']);
+
+ 
+Route::get('/materiais', [ProdutosController::class, 'index']);
+
+Route::post('/materialincluir/create', 'ProdutosController@store');
+
+Route::get('/materialincluir/', 'ProdutosController@create');
+
+Route::get('/produto/{produto}/edit', [ProdutosController::class,'edit'])->name('produto.edit');
+
+Route::post('/produto/{produto}', [ProdutosController::class,'update'])->name('produto.update');
+
+
+
+Route::get('/produto/search', 'ProdutosController@search');

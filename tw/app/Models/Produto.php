@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Http\Controllers\ProdutosController;
 use Illuminate\Support\Facades\App;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;

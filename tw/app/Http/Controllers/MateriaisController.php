@@ -10,7 +10,7 @@ class MateriaisController extends Controller
 {
    public function index()
    {
-       $produtos = Produto::all();
+       $produto = Produto::all();
        return view('materias', compact ('produtos'));
    } //
 }
