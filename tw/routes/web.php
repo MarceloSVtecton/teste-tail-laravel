@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MateriaisController;
-use App\Http\Controllers\ProdutosController;
+use App\Http\Controllers\ProdutoController;
 use App\Models\Produto;
 
 Route::get('/', function () {
@@ -24,19 +24,13 @@ Route::get('/materialeditar', function () {
 });
 
  
-Route::get('/materiais', [ProdutosController::class, 'index']);
+Route::get('/materiais', 'ProdutosController@index');
 
  
-Route::get('/materiais', [ProdutosController::class, 'index']);
+Route::get('/materiais', 'ProdutosController@index');
 
-Route::post('/materialincluir/create', 'ProdutosController@store');
+Route::resource('/produto', 'ProdutosController');
 
-Route::get('/materialincluir/', 'ProdutosController@create');
+Route::resource('/produto/{id}', 'ProdutosController@edit');
 
-Route::get('/produto/{produto}/edit', [ProdutosController::class,'edit'])->name('produto.edit');
-
-Route::post('/produto/{produto}', [ProdutosController::class,'update'])->name('produto.update');
-
-
-
-Route::get('/produto/search', 'ProdutosController@search');
+Route::resource('/produto/edit/{id}', 'ProdutosController@update')->name('alterar_produto');

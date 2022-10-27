@@ -1,3 +1,5 @@
+use App\Models\Produto
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -34,30 +36,38 @@
                 <h1 class="text-2xl font-medium title-font mb-2 text-gray-900">Editar</h1>
             </div>
 
-            <form enctype="multipart/form-data" action="materialeditar/update, $produto->id">
+            @foreach($produto as $id)
+                @csrf
+                
+            <form enctype="multipart/form-data" action="{{ route('alterar_produto', ['id' => $produto->id]) }}" method="POST">
+              
                 <div class="flex flex-wrap">
                     <div class="p-2 w-1/2">
                         <div class="relative">
                             <label for="descrição" class="leading-7 text-sm text-gray-600">Descrição</label>
-                            <input type="text" id="descrição" name="descrição" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                            <input  type="text" id="descrição" name="descrição" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                            value="{{ $produto->descrição }}">
                         </div>
                     </div>
 
                     <div class="p-2 w-1/2">
                         <div class="relative">
                             <label for="preço" class="leading-7 text-sm text-gray-600">Preço</label>
-                            <input type="text" id="preço" name="preço"
-                                   class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                            <input   type="text" id="preço" name="preço"
+                                   class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" 
+                                   value="{{ $produto->preço }}" >
                         </div>
                     </div>
 
                     <div class="p-2 w-1/2">
                         <div class="relative">
                             <label for="quantidade" class="leading-7 text-sm text-gray-600">Estoque</label>
-                            <input type="text" id="quantidade" name="quantidade"
-                                   class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                            <input  type="text" id="quantidade" name="quantidade"
+                                   class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                                   value="{{ $produto->quantidade }}"}>
                         </div>
                     </div>
+                    
 
                     
                     <div class="p-2 w-full">
@@ -65,9 +75,11 @@
                     </div>
 
                 </div>
+               @endforeach
             </form>
         </div>
     </div>
 </section>
+
 </body>
 </html>
